@@ -1,0 +1,11 @@
+venv/
+venv311/
+__pycache__/
+*.pyc
+*.log
+*.save
+cookies.txt
+uploads/
+downloaded-*
+test-*
+security-test.txt

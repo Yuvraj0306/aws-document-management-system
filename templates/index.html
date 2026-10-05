@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document Management System</title>
+</head>
+<body>
+
+    <h1>Document Management System</h1>
+
+    <a href="/logout">Logout</a>
+
+    <p>Application running on AWS EC2.</p>
+
+    <h2>Upload Document</h2>
+
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+
+        <input type="file" name="document" required>
+
+        <button type="submit">Upload</button>
+
+    </form>
+
+    <h2>Uploaded Documents</h2>
+
+    <ul>
+        {% for document in documents %}
+            <li>
+                <a href="/download/{{ document.split('/')[-1] }}">
+                    {{ document }}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+
+</body>
+</html>
